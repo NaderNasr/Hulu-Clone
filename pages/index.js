@@ -1,6 +1,6 @@
 import Head from 'next/head'
-import Image from 'next/image'
 import Header from '../componenets/Header'
+import Nav from '../componenets/Nav'
 
 export default function Home() {
   return (
@@ -12,7 +12,7 @@ export default function Home() {
       </Head>
 
      <Header/>
-       
+       <Nav/>
 
     </div>
   )
