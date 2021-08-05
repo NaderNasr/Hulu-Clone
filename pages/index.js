@@ -32,10 +32,14 @@ export async function getServerSideProps(context) {
   // .then((res) => res.json())
   const genre = context.query.genres
   const res = await fetch(`https://api.themoviedb.org/3${requests[genre]?.url 
-  || requests.fetchTrending.url}`)
+  || requests.fetchTrending.url || requests.fetchTopRated.url}`)
   let data = await res.json()
   // console.log(data.results)
-
+  if (!data) {
+    return {
+      notFound: true,
+    }
+  }
   return {
     props: {
       data: data.results
