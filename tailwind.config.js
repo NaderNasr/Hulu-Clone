@@ -11,6 +11,9 @@ module.exports = {
       backgroundColor: ['active'],
       borderColor: ['focus-visible', 'first'],
       textColor: ['visited'],
+      screens:{
+        "3xl": "200px"
+      }
     },
   },
   variants: {

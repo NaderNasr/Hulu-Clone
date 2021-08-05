@@ -7,7 +7,7 @@ const API_KEY = process.env.API_KEY
 
 
 export default function Home({data}) {
-  console.log({data})
+  // console.log({data})
   
   return (
     <div>
@@ -33,8 +33,8 @@ export async function getServerSideProps(context) {
   const genre = context.query.genres
   const res = await fetch(`https://api.themoviedb.org/3${requests[genre]?.url 
   || requests.fetchTrending.url}`)
-  const data = await res.json()
-  console.log(data.results)
+  let data = await res.json()
+  // console.log(data.results)
 
   return {
     props: {
